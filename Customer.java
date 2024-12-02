@@ -22,7 +22,7 @@ public class Customer implements Runnable {
         }
 
         synchronized (ticketpool) {
-            if (buyTicketCount <= ticketpool.getAvailableTickets()) {
+            if (buyTicketCount <= database.getVariable("availableTickets")) {
                 ticketpool.removeTickets(buyTicketCount);
                 System.out.println("You have successfully bought " + buyTicketCount + " tickets.");
             } else {

@@ -27,7 +27,7 @@ public class Both {
                 try {
                     while (true) {
                         synchronized (ticketpool) {
-                            if ((ticketpool.getAvailableTickets() + ticketsToAdd) <= database.getVariable("totalTickets")) {
+                            if ((database.getVariable("availableTickets") + ticketsToAdd) <= database.getVariable("totalTickets")) {
                                 ticketpool.addTickets(ticketsToAdd);
 
                                 System.out.println(Thread.currentThread().getName() + " added " + ticketsToAdd + " tickets.");
@@ -62,7 +62,7 @@ public class Both {
                 try {
                     while (ticketsBought < totalTicketsToBuy) {
                         synchronized (ticketpool) {
-                            if (ticketsPerBatch <= ticketpool.getAvailableTickets()) {
+                            if (ticketsPerBatch <= database.getVariable("availableTickets")) {
 
                                 ticketpool.removeTickets(ticketsPerBatch);
 

@@ -4,13 +4,11 @@ public class Admin {
 
     private Configuration configuration;
     private Database database;
-    private Ticketpool ticketpool;
     private Scanner scanner;
 
-    public Admin(Database database, Configuration configuration , Ticketpool ticketpool) {
+    public Admin(Database database, Configuration configuration) {
         this.configuration = configuration;
         this.database = database;
-        this.ticketpool = ticketpool;
         this.scanner = new Scanner(System.in);
     }
 
@@ -97,7 +95,7 @@ public class Admin {
                 System.out.flush();
 
 
-                System.out.println("Available Tickets: " + ticketpool.getAvailableTickets());
+                System.out.println("Available Tickets: " + database.getVariable("availableTickets"));
                 System.out.println();
                 
                 

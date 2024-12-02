@@ -19,7 +19,7 @@ public class Vendor {
         int numberOfTicketsToAdd = scanner.nextInt();
 
         synchronized (ticketpool) {
-            if (numberOfTicketsToAdd > 0 && (ticketpool.getAvailableTickets() + numberOfTicketsToAdd) <= database.getVariable("totalTickets")) {
+            if (numberOfTicketsToAdd > 0 && (database.getVariable("availableTickets") + numberOfTicketsToAdd) <= database.getVariable("totalTickets")) {
                 new Thread(() -> {
                     int ticketsLeftToAdd = numberOfTicketsToAdd;
                     int releaseRate = database.getVariable("ticketReleaseRate");

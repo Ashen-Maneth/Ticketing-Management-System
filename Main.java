@@ -7,11 +7,12 @@ public class Main {
         String adminLoginCode = "A1234";
         String answerForLogin;
 
-        Ticketpool ticketpool = new Ticketpool();
+
         Readme readme = new Readme();
         Database database = new Database();
+        Ticketpool ticketpool = new Ticketpool(database);
         Configuration configuration = new Configuration(database);
-        Admin admin = new Admin(database, configuration , ticketpool);
+        Admin admin = new Admin(database, configuration);
         Vendor vendor = new Vendor(admin, ticketpool, database);
         Both both = new Both(ticketpool, database, admin);
         Customer customer = new Customer(ticketpool, database);

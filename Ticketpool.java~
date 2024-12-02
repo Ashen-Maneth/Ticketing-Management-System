@@ -12,7 +12,7 @@ public class Ticketpool {
         if (ticketsToAdd > 0) {
             availableTicket1 += ticketsToAdd;
             database.setVariable("availableTickets", availableTicket1);
-             System.out.println(ticketsToAdd + " tickets added to the pool. Total tickets available: " + database.getVariable("availableTickets"));
+            // System.out.println(ticketsToAdd + " tickets added to the pool. Total tickets available: " + availableTickets);
         } else {
             System.out.println("Invalid number of tickets to add.");
         }
@@ -22,7 +22,7 @@ public class Ticketpool {
         if (ticketsToRemove > 0) {
             availableTicket1 -= ticketsToRemove;
             database.setVariable("availableTickets", availableTicket1);
-             System.out.println(ticketsToRemove + " tickets removed from the pool. Total tickets available: " + database.getVariable("availableTickets"));
+            // System.out.println(ticketsToRemove + " tickets removed from the pool. Total tickets available: " + availableTickets);
         } else {
             System.out.println("Invalid number of tickets to remove.");
         }
